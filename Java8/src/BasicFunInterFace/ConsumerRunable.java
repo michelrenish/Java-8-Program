@@ -4,10 +4,13 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ConsumerRunable {
+	
 	public static void main(String[] args) {
-		Consumer<Integer> c1 = (n) -> System.out.println(n + "bye");
+		Consumer c1 = (n) -> System.out.println(n + "bye");
+		
 		c1.accept(100);// it will concat
 		c1.accept(809);
+		
 		Consumer<Integer> c2 = (n) -> System.out.println(n + 100);
 		c2.accept(100);// it will add
 		// there is BiConsumer it have 2 args
