@@ -1,6 +1,7 @@
-package streams.employee;
+package proj2;
 
 public class Employee {
+
 	
 	private int eid;
 	private String ename;

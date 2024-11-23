@@ -1,11 +1,12 @@
-package streams.employee;
+package proj2;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class EmpoloyeeReun {
+public class EmployeeRunner {
 
 	public static void main(String[] args) {
 		
@@ -36,7 +37,27 @@ public class EmpoloyeeReun {
 		System.out.println("==========================================");
 //print only employee who has age >25
 l1.stream().filter((e)->e.getAge()>25).forEach((ele)->System.out.println(ele));		
-		
+System.out.println("===================================================");
+//filter only employees who's age greater than 24 and increase their sal by 5000
+//then store their data as list
+Predicate<Employee> p1=(e)->e.getAge()>24;
+
+List<Employee> l3=l1.stream().filter(p1).map((e)->{
+	e.setSal(e.getSal()+5000);
+	return e;}).collect(Collectors.toList());
+
+l3.forEach(ele->System.out.println(ele));
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
